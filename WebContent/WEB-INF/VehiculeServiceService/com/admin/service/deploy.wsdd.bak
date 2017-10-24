@@ -1,0 +1,53 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from VehiculeServiceService WSDL service -->
+
+  <service name="VehiculeService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service.admin.com"/>
+      <parameter name="wsdlServiceElement" value="VehiculeServiceService"/>
+      <parameter name="schemaQualified" value="http://model.admin.com,http://service.admin.com"/>
+      <parameter name="wsdlServicePort" value="VehiculeService"/>
+      <parameter name="className" value="com.admin.service.VehiculeServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="VehiculeService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="addVehicule" qname="operNS:addVehicule" xmlns:operNS="http://service.admin.com" returnQName="retNS:addVehiculeReturn" xmlns:retNS="http://service.admin.com" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:v" xmlns:pns="http://service.admin.com" type="tns:Vehicule" xmlns:tns="http://model.admin.com"/>
+      </operation>
+      <operation name="getAllVehicule" qname="operNS:getAllVehicule" xmlns:operNS="http://service.admin.com" returnQName="retNS:getAllVehiculeReturn" xmlns:retNS="http://service.admin.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="deleteVehicule" qname="operNS:deleteVehicule" xmlns:operNS="http://service.admin.com" returnQName="retNS:deleteVehiculeReturn" xmlns:retNS="http://service.admin.com" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://service.admin.com" type="tns:long" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="updateVehicule" qname="operNS:updateVehicule" xmlns:operNS="http://service.admin.com" returnQName="retNS:updateVehiculeReturn" xmlns:retNS="http://service.admin.com" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:v" xmlns:pns="http://service.admin.com" type="tns:Vehicule" xmlns:tns="http://model.admin.com"/>
+      </operation>
+      <parameter name="allowedMethods" value="addVehicule deleteVehicule getAllVehicule updateVehicule"/>
+
+      <typeMapping
+        xmlns:ns="http://model.admin.com"
+        qname="ns:Vehicule"
+        type="java:com.admin.model.Vehicule"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://model.admin.com"
+        qname="ns:Demandeur"
+        type="java:com.admin.model.Demandeur"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.admin.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.admin.com" xmlns:intf="http://service.admin.com" xmlns:tns1="http://model.admin.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.admin.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://model.admin.com"/>
+   <element name="getAllDemandeur">
+    <complexType/>
+   </element>
+   <element name="getAllDemandeurResponse">
+    <complexType>
+     <sequence>
+      <element name="getAllDemandeurReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateDemandeur">
+    <complexType>
+     <sequence>
+      <element name="d" type="tns1:Demandeur"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateDemandeurResponse">
+    <complexType>
+     <sequence>
+      <element name="updateDemandeurReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getDemandeuById">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:long"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getDemandeuByIdResponse">
+    <complexType>
+     <sequence>
+      <element name="getDemandeuByIdReturn" type="tns1:Demandeur"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteDemandeur">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:long"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteDemandeurResponse">
+    <complexType>
+     <sequence>
+      <element name="deleteDemandeurReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addDemandeur">
+    <complexType>
+     <sequence>
+      <element name="d" type="tns1:Demandeur"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addDemandeurResponse">
+    <complexType>
+     <sequence>
+      <element name="addDemandeurReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://model.admin.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Demandeur">
+    <sequence>
+     <element name="RSSL" nillable="true" type="xsd:string"/>
+     <element name="SRSSL" nillable="true" type="xsd:string"/>
+     <element name="addne" nillable="true" type="xsd:string"/>
+     <element name="adressed" nillable="true" type="xsd:string"/>
+     <element name="codepostald" nillable="true" type="xsd:string"/>
+     <element name="communed" nillable="true" type="xsd:string"/>
+     <element name="datene" nillable="true" type="xsd:string"/>
+     <element name="departemet" nillable="true" type="xsd:string"/>
+     <element name="extensiond" nillable="true" type="xsd:string"/>
+     <element name="id" nillable="true" type="xsd:int"/>
+     <element name="locationcourte" type="xsd:boolean"/>
+     <element name="locationlongue" type="xsd:boolean"/>
+     <element name="morale" type="xsd:boolean"/>
+     <element name="nom" nillable="true" type="xsd:string"/>
+     <element name="nomdepoux" nillable="true" type="xsd:string"/>
+     <element name="nomlocataire" nillable="true" type="xsd:string"/>
+     <element name="nomv" nillable="true" type="xsd:string"/>
+     <element name="numberpersotitulai" type="xsd:int"/>
+     <element name="nvd" type="xsd:int"/>
+     <element name="pays" nillable="true" type="xsd:string"/>
+     <element name="sexe" nillable="true" type="xsd:string"/>
+     <element name="siren" nillable="true" type="xsd:string"/>
+     <element name="snomlocataire" nillable="true" type="xsd:string"/>
+     <element name="typevd" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="addDemandeurRequest">
+
+      <wsdl:part element="impl:addDemandeur" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDemandeuByIdResponse">
+
+      <wsdl:part element="impl:getDemandeuByIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateDemandeurRequest">
+
+      <wsdl:part element="impl:updateDemandeur" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllDemandeurResponse">
+
+      <wsdl:part element="impl:getAllDemandeurResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDemandeuByIdRequest">
+
+      <wsdl:part element="impl:getDemandeuById" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addDemandeurResponse">
+
+      <wsdl:part element="impl:addDemandeurResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllDemandeurRequest">
+
+      <wsdl:part element="impl:getAllDemandeur" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteDemandeurRequest">
+
+      <wsdl:part element="impl:deleteDemandeur" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteDemandeurResponse">
+
+      <wsdl:part element="impl:deleteDemandeurResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateDemandeurResponse">
+
+      <wsdl:part element="impl:updateDemandeurResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="DemandeurService">
+
+      <wsdl:operation name="getAllDemandeur">
+
+         <wsdl:input message="impl:getAllDemandeurRequest" name="getAllDemandeurRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllDemandeurResponse" name="getAllDemandeurResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateDemandeur">
+
+         <wsdl:input message="impl:updateDemandeurRequest" name="updateDemandeurRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateDemandeurResponse" name="updateDemandeurResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDemandeuById">
+
+         <wsdl:input message="impl:getDemandeuByIdRequest" name="getDemandeuByIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getDemandeuByIdResponse" name="getDemandeuByIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteDemandeur">
+
+         <wsdl:input message="impl:deleteDemandeurRequest" name="deleteDemandeurRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteDemandeurResponse" name="deleteDemandeurResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addDemandeur">
+
+         <wsdl:input message="impl:addDemandeurRequest" name="addDemandeurRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addDemandeurResponse" name="addDemandeurResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="DemandeurServiceSoapBinding" type="impl:DemandeurService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getAllDemandeur">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllDemandeurRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllDemandeurResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateDemandeur">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateDemandeurRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateDemandeurResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDemandeuById">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getDemandeuByIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getDemandeuByIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteDemandeur">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteDemandeurRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteDemandeurResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addDemandeur">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addDemandeurRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addDemandeurResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="DemandeurServiceService">
+
+      <wsdl:port binding="impl:DemandeurServiceSoapBinding" name="DemandeurService">
+
+         <wsdlsoap:address location="http://localhost:8080/Adminstration/services/DemandeurService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

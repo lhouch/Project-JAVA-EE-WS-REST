@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from DemandeurServiceService WSDL service -->
+
+  <service name="DemandeurService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service.admin.com"/>
+      <parameter name="wsdlServiceElement" value="DemandeurServiceService"/>
+      <parameter name="schemaQualified" value="http://model.admin.com,http://service.admin.com"/>
+      <parameter name="wsdlServicePort" value="DemandeurService"/>
+      <parameter name="className" value="com.admin.service.DemandeurService"/>
+      <parameter name="wsdlPortType" value="DemandeurService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://service.admin.com" xmlns:retNS="http://service.admin.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getAllDemandeur" qname="operNS:getAllDemandeur" returnQName="retNS:getAllDemandeurReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://service.admin.com" xmlns:retNS="http://service.admin.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateDemandeur" qname="operNS:updateDemandeur" returnQName="retNS:updateDemandeurReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://service.admin.com" xmlns:tns="http://model.admin.com" qname="pns:d" type="tns:Demandeur"/>
+      </operation>
+      <operation xmlns:operNS="http://service.admin.com" xmlns:retNS="http://service.admin.com" xmlns:rtns="http://model.admin.com" name="getDemandeuById" qname="operNS:getDemandeuById" returnQName="retNS:getDemandeuByIdReturn" returnType="rtns:Demandeur" soapAction="">
+        <parameter xmlns:pns="http://service.admin.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:long"/>
+      </operation>
+      <operation xmlns:operNS="http://service.admin.com" xmlns:retNS="http://service.admin.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deleteDemandeur" qname="operNS:deleteDemandeur" returnQName="retNS:deleteDemandeurReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://service.admin.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:long"/>
+      </operation>
+      <operation xmlns:operNS="http://service.admin.com" xmlns:retNS="http://service.admin.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addDemandeur" qname="operNS:addDemandeur" returnQName="retNS:addDemandeurReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://service.admin.com" xmlns:tns="http://model.admin.com" qname="pns:d" type="tns:Demandeur"/>
+      </operation>
+      <parameter name="allowedMethods" value="deleteDemandeur addDemandeur updateDemandeur getAllDemandeur getDemandeuById"/>
+
+      <typeMapping xmlns:ns="http://model.admin.com" qname="ns:Demandeur" type="java:com.admin.model.Demandeur" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

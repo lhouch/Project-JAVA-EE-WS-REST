@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.admin.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.admin.com" xmlns:intf="http://service.admin.com" xmlns:tns1="http://model.admin.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.admin.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://model.admin.com"/>
+   <element name="addVehicule">
+    <complexType>
+     <sequence>
+      <element name="v" type="tns1:Vehicule"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addVehiculeResponse">
+    <complexType>
+     <sequence>
+      <element name="addVehiculeReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllVehicule">
+    <complexType/>
+   </element>
+   <element name="getAllVehiculeResponse">
+    <complexType>
+     <sequence>
+      <element name="getAllVehiculeReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteVehicule">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:long"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteVehiculeResponse">
+    <complexType>
+     <sequence>
+      <element name="deleteVehiculeReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateVehicule">
+    <complexType>
+     <sequence>
+      <element name="v" type="tns1:Vehicule"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateVehiculeResponse">
+    <complexType>
+     <sequence>
+      <element name="updateVehiculeReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://model.admin.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Demandeur">
+    <sequence>
+     <element name="RSSL" nillable="true" type="xsd:string"/>
+     <element name="SRSSL" nillable="true" type="xsd:string"/>
+     <element name="addne" nillable="true" type="xsd:string"/>
+     <element name="adressed" nillable="true" type="xsd:string"/>
+     <element name="codepostald" nillable="true" type="xsd:string"/>
+     <element name="communed" nillable="true" type="xsd:string"/>
+     <element name="datene" nillable="true" type="xsd:string"/>
+     <element name="departemet" nillable="true" type="xsd:string"/>
+     <element name="extensiond" nillable="true" type="xsd:string"/>
+     <element name="id" type="xsd:long"/>
+     <element name="locationcourte" type="xsd:boolean"/>
+     <element name="locationlongue" type="xsd:boolean"/>
+     <element name="morale" type="xsd:boolean"/>
+     <element name="nom" nillable="true" type="xsd:string"/>
+     <element name="nomdepoux" nillable="true" type="xsd:string"/>
+     <element name="nomlocataire" nillable="true" type="xsd:string"/>
+     <element name="nomv" nillable="true" type="xsd:string"/>
+     <element name="numberpersotitulai" type="xsd:int"/>
+     <element name="nvd" type="xsd:int"/>
+     <element name="pays" nillable="true" type="xsd:string"/>
+     <element name="sexe" nillable="true" type="xsd:string"/>
+     <element name="siren" nillable="true" type="xsd:string"/>
+     <element name="snomlocataire" nillable="true" type="xsd:string"/>
+     <element name="typevd" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="Vehicule">
+    <sequence>
+     <element name="couleur" nillable="true" type="xsd:string"/>
+     <element name="couleurClair" type="xsd:boolean"/>
+     <element name="dateAchat" nillable="true" type="xsd:string"/>
+     <element name="dateCertificatA" nillable="true" type="xsd:string"/>
+     <element name="datePM" nillable="true" type="xsd:string"/>
+     <element name="demandeur" nillable="true" type="tns1:Demandeur"/>
+     <element name="denominationC" nillable="true" type="xsd:string"/>
+     <element name="genreNational" nillable="true" type="xsd:string"/>
+     <element name="id" nillable="true" type="xsd:long"/>
+     <element name="marque" nillable="true" type="xsd:string"/>
+     <element name="numerExp" nillable="true" type="xsd:string"/>
+     <element name="numeroFormuleC" nillable="true" type="xsd:string"/>
+     <element name="numeroIdV" nillable="true" type="xsd:string"/>
+     <element name="numeroMA" nillable="true" type="xsd:string"/>
+     <element name="typeV" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="addVehiculeResponse">
+
+      <wsdl:part element="impl:addVehiculeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addVehiculeRequest">
+
+      <wsdl:part element="impl:addVehicule" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllVehiculeRequest">
+
+      <wsdl:part element="impl:getAllVehicule" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateVehiculeResponse">
+
+      <wsdl:part element="impl:updateVehiculeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteVehiculeRequest">
+
+      <wsdl:part element="impl:deleteVehicule" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllVehiculeResponse">
+
+      <wsdl:part element="impl:getAllVehiculeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteVehiculeResponse">
+
+      <wsdl:part element="impl:deleteVehiculeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateVehiculeRequest">
+
+      <wsdl:part element="impl:updateVehicule" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="VehiculeService">
+
+      <wsdl:operation name="addVehicule">
+
+         <wsdl:input message="impl:addVehiculeRequest" name="addVehiculeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addVehiculeResponse" name="addVehiculeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllVehicule">
+
+         <wsdl:input message="impl:getAllVehiculeRequest" name="getAllVehiculeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllVehiculeResponse" name="getAllVehiculeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteVehicule">
+
+         <wsdl:input message="impl:deleteVehiculeRequest" name="deleteVehiculeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteVehiculeResponse" name="deleteVehiculeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateVehicule">
+
+         <wsdl:input message="impl:updateVehiculeRequest" name="updateVehiculeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateVehiculeResponse" name="updateVehiculeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="VehiculeServiceSoapBinding" type="impl:VehiculeService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="addVehicule">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addVehiculeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addVehiculeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllVehicule">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllVehiculeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllVehiculeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteVehicule">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteVehiculeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteVehiculeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateVehicule">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateVehiculeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateVehiculeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="VehiculeServiceService">
+
+      <wsdl:port binding="impl:VehiculeServiceSoapBinding" name="VehiculeService">
+
+         <wsdlsoap:address location="http://localhost:8080/Adminstration/services/VehiculeService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
